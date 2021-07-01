@@ -1,18 +1,18 @@
 import React, {useRef} from 'react';
 import { Ref } from 'react';
-import { useAppDispatch } from '../../hooks/hooks';
-import { ITodo } from '../../interfaces/interfaces';
+import { TodoInterface } from '../../interfaces/interfaces';
 import { addTodo } from '../../store/actions/actions';
+import { useDispatch } from 'react-redux';
 
 
 const TodoForm: React.FC = () => {
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   
   const input: Ref<any> = useRef(null);
 
   const addHandler = (title: string) => {
-    const newTodo: ITodo = {
+    const newTodo: TodoInterface = {
       title: title,
       id: Date.now(),
       completed: false

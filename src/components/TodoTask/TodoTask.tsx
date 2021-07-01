@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAppDispatch } from '../../hooks/hooks';
+import { useDispatch } from 'react-redux';
 import { changeTodoStatus, deleteTodo } from '../../store/actions/actions';
 
 type TodoTaskProps = {
@@ -11,7 +11,7 @@ type TodoTaskProps = {
 
 const TodoTask: React.FC<TodoTaskProps> = ({ title, id, isCompleted, classes }) => {
   
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const toggleHandler = (id: number) => {
     dispatch(changeTodoStatus(id))
